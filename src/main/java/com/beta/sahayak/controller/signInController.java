@@ -10,8 +10,9 @@ public class signInController {
 
     @Autowired SignInImpl signInImpl;
 
-    @RequestMapping("v1/beta/sign")
+    @GetMapping("v1/beta/sign")
     public String signIn (@RequestParam("name") String name, @RequestParam("email") String emailId){
+        System.out.println("SIGN");
         signInImpl.userLogin(emailId,name);
         return null;
     }
